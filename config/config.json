@@ -64,6 +64,10 @@
     {
       "id": "0x9a5620309c20b8beca1d59c6def1e73ac6cba45d",
       "name": "Solv - SolvBTC.BERA"
+    },
+    {
+      "id": "0xc7fee55e923ddbc6c596b8fe7e14889bc3005b3c",
+      "name": "Wasabee - Stake BEE / WBERA"
     }
   ],
   "contract": {
