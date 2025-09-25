@@ -87,9 +87,9 @@ def main():
     # 获取验证者公钥
     pubkey = config["validator_info"]["pubkey"]
     queued_reward_allocation = contractInteraction.get_queued_reward_allocation(pubkey)
-    if queued_reward_allocation["startBlock"] != 0 :
-        logger.debug(f"当前分配已排队: {queued_reward_allocation}")
-        return
+    # if queued_reward_allocation["startBlock"] != 0 :
+    #     logger.debug(f"当前分配已排队: {queued_reward_allocation}")
+    #     return
 
     # 获取SNZ Validator 数据
     current_vaults = fetchData.get_validator_data()
@@ -112,20 +112,20 @@ def main():
     if not need_new_allocation(selected_vaults, current_vaults):
         logger.info("不需要新的BGT分配")
         return
-    # 计算开始区块
-    start_block = current_block + config["params"]["delay_blocks"]
+    # # 计算开始区块
+    # start_block = current_block + config["params"]["delay_blocks"]
     
-    # 调用合约函数排队新的奖励分配
-    logger.debug(f"开始区块: {start_block}")
-    logger.debug(f"正在排队新的BGT分配...")
-    tx_hash = contractInteraction.queue_new_reward_allocation(pubkey, start_block, selected_vaults)
+    # # 调用合约函数排队新的奖励分配
+    # logger.debug(f"开始区块: {start_block}")
+    # logger.debug(f"正在排队新的BGT分配...")
+    # tx_hash = contractInteraction.queue_new_reward_allocation(pubkey, start_block, selected_vaults)
     
-    if tx_hash:
-        logger.info(f"新BGT分配将在区块 {start_block} 开始生效")
-        for vault in selected_vaults:
-            logger.info(f"Vault: {vault['name']}, 权重: {vault['weights']}, 激励率: {vault['incentivesRate']}, 剩余时间: {vault['remainingHours']}")
-    else:
-        logger.debug("BGT分配排队失败")
+    # if tx_hash:
+    #     logger.info(f"新BGT分配将在区块 {start_block} 开始生效")
+    #     for vault in selected_vaults:
+    #         logger.info(f"Vault: {vault['name']}, 权重: {vault['weights']}, 激励率: {vault['incentivesRate']}, 剩余时间: {vault['remainingHours']}")
+    # else:
+    #     logger.debug("BGT分配排队失败")
 
 
 if __name__ == "__main__":

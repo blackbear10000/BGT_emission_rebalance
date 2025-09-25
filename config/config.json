@@ -18,9 +18,17 @@
     {
       "id": "0x2ce23c67a3fb0b9c6c8e3546725871e74b2a08ab",
       "name": "Stake bSumer"
+    },
+    {
+      "id": "0x7eae500c0ff540c61d882524c79e4c3bf1a52938",
+      "name": "Terplayer Vault"
     }
   ],
   "whitelisted_vaults": [
+    {
+      "id": "0xBDeA4c1950103de7550FC48459405c2132fe72BA",
+      "name": "Bera Borrow Vault"
+    },
     {
       "id": "0x3fc5cb0290c82680afe9ef8cdde5468d74c85705",
       "name": "SolvProtocol - SolvBTC.BBN | SolvBTC"
