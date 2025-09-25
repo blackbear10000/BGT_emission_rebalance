@@ -112,20 +112,20 @@ def main():
     if not need_new_allocation(selected_vaults, current_vaults):
         logger.info("不需要新的BGT分配")
         return
-    # # 计算开始区块
-    # start_block = current_block + config["params"]["delay_blocks"]
+    # 计算开始区块
+    start_block = current_block + config["params"]["delay_blocks"]
     
-    # # 调用合约函数排队新的奖励分配
-    # logger.debug(f"开始区块: {start_block}")
-    # logger.debug(f"正在排队新的BGT分配...")
-    # tx_hash = contractInteraction.queue_new_reward_allocation(pubkey, start_block, selected_vaults)
+    # 调用合约函数排队新的奖励分配
+    logger.debug(f"开始区块: {start_block}")
+    logger.debug(f"正在排队新的BGT分配...")
+    tx_hash = contractInteraction.queue_new_reward_allocation(pubkey, start_block, selected_vaults)
     
-    # if tx_hash:
-    #     logger.info(f"新BGT分配将在区块 {start_block} 开始生效")
-    #     for vault in selected_vaults:
-    #         logger.info(f"Vault: {vault['name']}, 权重: {vault['weights']}, 激励率: {vault['incentivesRate']}, 剩余时间: {vault['remainingHours']}")
-    # else:
-    #     logger.debug("BGT分配排队失败")
+    if tx_hash:
+        logger.info(f"新BGT分配将在区块 {start_block} 开始生效")
+        for vault in selected_vaults:
+            logger.info(f"Vault: {vault['name']}, 权重: {vault['weights']}")
+    else:
+        logger.debug("BGT分配排队失败")
 
 
 if __name__ == "__main__":
