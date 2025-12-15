@@ -11,18 +11,6 @@
     "min_remaining_hours": 5.5
   },
   "fixed_vaults": [
-    {
-      "id": "0xaf0C4454bb84C64B5c6ef9292B1527C5dFD2F8B7",
-      "name": "Wasabee - WETH | WBERA"
-    },
-    {
-      "id": "0x2ce23c67a3fb0b9c6c8e3546725871e74b2a08ab",
-      "name": "Stake bSumer"
-    },
-    {
-      "id": "0x7eae500c0ff540c61d882524c79e4c3bf1a52938",
-      "name": "Terplayer Vault"
-    }
   ],
   "whitelisted_vaults": [
     {
