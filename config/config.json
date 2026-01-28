@@ -11,6 +11,14 @@
     "min_remaining_hours": 5.5
   },
   "fixed_vaults": [
+    {
+      "id": "0xd5e32d4d7920a876417ef2ecbbafb58b38f717ac",
+      "name": "Sumer - sweETH"
+    },
+    {
+      "id": "0x2ce23c67a3fb0b9c6c8e3546725871e74b2a08ab",
+      "name": "Sumer - Stake bSumer"
+    }
   ],
   "whitelisted_vaults": [
     {
